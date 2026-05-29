@@ -8,8 +8,8 @@ function validateLogin() {
   const pinInput = document.getElementById('loginPin').value.trim();
   const errorMsg = document.getElementById('loginErrorMsg');
 
-  // SEKARANG DAHTUKAR: Log masuk menggunakan 0000000000 dan PIN 210404
-  if (phoneInput === "0000000000" && pinInput === "210404") {
+  // Logik Rahsia: Pelanggan kena taip nombor betul secara manual di kotak kosong tersebut
+  if (phoneInput === "1165113427" && pinInput === "210404") {
     errorMsg.classList.add('hidden');
     
     // Memasukkan teks secara dinamik selepas log masuk berjaya
@@ -61,7 +61,6 @@ function handlePaymentSelection(radio) {
   }
 }
 
-// Pilihan saluran perbankan/e-wallet
 function selectChannel(channelName) {
   chosenChannel = channelName;
   document.getElementById('selectedBankName').innerText = channelName;
@@ -69,7 +68,6 @@ function selectChannel(channelName) {
   document.getElementById('dropdownChannels').classList.add('hidden');
 }
 
-// Mengeset semula pilihan jika memilih kaedah lain selain DuitNow
 function resetDuitNowSelection() {
   const labelDuitNow = document.getElementById('duitNowLabel');
   document.getElementById('dropdownChannels').classList.add('hidden');
@@ -79,7 +77,6 @@ function resetDuitNowSelection() {
   chosenChannel = "";
 }
 
-// Tutup Modal Amaran Kaedah Lain
 function closeAlertModal() {
   document.getElementById('paymentAlertModal').classList.add('hidden');
 }
@@ -118,7 +115,6 @@ function startTimer() {
   }, 1000);
 }
 
-// Hentikan fungsi timer jika keluar skrin QR
 function stopTimer() {
   if (timerCountdownInterval) {
     clearInterval(timerCountdownInterval);
@@ -126,7 +122,7 @@ function stopTimer() {
   }
 }
 
-// 5. Muat Naik Bukti Fail Resit
+// 5. Muat Naik Bukti Fail
 function handleFileChange(input) {
   if (input.files && input.files.length > 0) {
     document.getElementById('uploadTextContainer').classList.add('hidden');
@@ -135,7 +131,6 @@ function handleFileChange(input) {
   }
 }
 
-// Hantar borang resit penutup
 function executeFinalSubmit() {
   const fileCheck = document.getElementById('receiptFile').files;
   if (fileCheck.length === 0) {
