@@ -8,8 +8,8 @@ function validateLogin() {
   const pinInput = document.getElementById('loginPin').value.trim();
   const errorMsg = document.getElementById('loginErrorMsg');
 
-  // Semakan sekatan berdasarkan arahan anda
-  if (phoneInput === "1165113427" && pinInput === "210404") {
+  // SEKARANG DAHTUKAR: Log masuk menggunakan 0000000000 dan PIN 210404
+  if (phoneInput === "0000000000" && pinInput === "210404") {
     errorMsg.classList.add('hidden');
     
     // Memasukkan teks secara dinamik selepas log masuk berjaya
@@ -61,6 +61,7 @@ function handlePaymentSelection(radio) {
   }
 }
 
+// Pilihan saluran perbankan/e-wallet
 function selectChannel(channelName) {
   chosenChannel = channelName;
   document.getElementById('selectedBankName').innerText = channelName;
@@ -78,6 +79,7 @@ function resetDuitNowSelection() {
   chosenChannel = "";
 }
 
+// Tutup Modal Amaran Kaedah Lain
 function closeAlertModal() {
   document.getElementById('paymentAlertModal').classList.add('hidden');
 }
@@ -116,6 +118,7 @@ function startTimer() {
   }, 1000);
 }
 
+// Hentikan fungsi timer jika keluar skrin QR
 function stopTimer() {
   if (timerCountdownInterval) {
     clearInterval(timerCountdownInterval);
@@ -123,7 +126,7 @@ function stopTimer() {
   }
 }
 
-// 5. Muat Naik Bukti Fail
+// 5. Muat Naik Bukti Fail Resit
 function handleFileChange(input) {
   if (input.files && input.files.length > 0) {
     document.getElementById('uploadTextContainer').classList.add('hidden');
@@ -132,6 +135,7 @@ function handleFileChange(input) {
   }
 }
 
+// Hantar borang resit penutup
 function executeFinalSubmit() {
   const fileCheck = document.getElementById('receiptFile').files;
   if (fileCheck.length === 0) {
