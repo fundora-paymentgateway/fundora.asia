@@ -1,0 +1,32 @@
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Custom gaya untuk butang radio (pilihan kaedah bank) */
+input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #9CA3AF;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input[type="radio"]:checked {
+  border: 2px solid #005E42;
+  background-color: transparent;
+}
+
+input[type="radio"]:checked::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background-color: #005E42;
+  border-radius: 50%;
+  display: block;
+}
